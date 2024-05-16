@@ -1,0 +1,3386 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20241.24.0425.1340                               -->
+<workbook original-version='18.1' source-build='2024.1.2 (20241.24.0425.1340)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelExtractV2.true...ObjectModelExtractV2 />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='df_final_demo_cleaned+' inline='true' name='federated.1r8m7gq05p65ao142q4z00t6859d' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='df_final_demo_cleaned' name='textscan.1pf5guo0ildeho1fwha1g14sg4nn'>
+            <connection class='textscan' directory='/Users/javi/Desktop/Ironhack/Entregas de github/Ironhack-Project-2/Raw data' filename='df_final_demo_cleaned.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1pf5guo0ildeho1fwha1g14sg4nn' name='df_final_demo_cleaned.csv' table='[df_final_demo_cleaned#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='client_id' ordinal='0' />
+            <column datatype='real' name='years_as_client' ordinal='1' />
+            <column datatype='real' name='months_as_client' ordinal='2' />
+            <column datatype='real' name='age' ordinal='3' />
+            <column datatype='string' name='gender' ordinal='4' />
+            <column datatype='real' name='number_of_accounts' ordinal='5' />
+            <column datatype='real' name='total_balance' ordinal='6' />
+            <column datatype='real' name='calls_in_the_last_6_months' ordinal='7' />
+            <column datatype='real' name='frequency_of_logons_6_months' ordinal='8' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='textscan.1pf5guo0ildeho1fwha1g14sg4nn' name='df_final_demo_cleaned.csv' table='[df_final_demo_cleaned#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='client_id' ordinal='0' />
+              <column datatype='real' name='years_as_client' ordinal='1' />
+              <column datatype='real' name='months_as_client' ordinal='2' />
+              <column datatype='real' name='age' ordinal='3' />
+              <column datatype='string' name='gender' ordinal='4' />
+              <column datatype='real' name='number_of_accounts' ordinal='5' />
+              <column datatype='real' name='total_balance' ordinal='6' />
+              <column datatype='real' name='calls_in_the_last_6_months' ordinal='7' />
+              <column datatype='real' name='frequency_of_logons_6_months' ordinal='8' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1pf5guo0ildeho1fwha1g14sg4nn' name='df_merged_sorted.csv' table='[df_merged_sorted#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='client_id' ordinal='0' />
+              <column datatype='string' name='visitor_id' ordinal='1' />
+              <column datatype='string' name='visit_id' ordinal='2' />
+              <column datatype='string' name='process_step' ordinal='3' />
+              <column datatype='datetime' name='date_time' ordinal='4' />
+              <column datatype='string' name='Variation' ordinal='5' />
+              <column datatype='real' name='time_diff' ordinal='6' />
+              <column datatype='integer' name='step_value' ordinal='7' />
+              <column datatype='real' name='prev_step_value' ordinal='8' />
+              <column datatype='integer' name='error_flags' ordinal='9' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[Variation]' value='[df_merged_sorted.csv].[Variation]' />
+          <map key='[age]' value='[df_final_demo_cleaned.csv].[age]' />
+          <map key='[calls_in_the_last_6_months]' value='[df_final_demo_cleaned.csv].[calls_in_the_last_6_months]' />
+          <map key='[client_id (df_merged_sorted.csv)]' value='[df_merged_sorted.csv].[client_id]' />
+          <map key='[client_id]' value='[df_final_demo_cleaned.csv].[client_id]' />
+          <map key='[date_time]' value='[df_merged_sorted.csv].[date_time]' />
+          <map key='[error_flags]' value='[df_merged_sorted.csv].[error_flags]' />
+          <map key='[frequency_of_logons_6_months]' value='[df_final_demo_cleaned.csv].[frequency_of_logons_6_months]' />
+          <map key='[gender]' value='[df_final_demo_cleaned.csv].[gender]' />
+          <map key='[months_as_client]' value='[df_final_demo_cleaned.csv].[months_as_client]' />
+          <map key='[number_of_accounts]' value='[df_final_demo_cleaned.csv].[number_of_accounts]' />
+          <map key='[prev_step_value]' value='[df_merged_sorted.csv].[prev_step_value]' />
+          <map key='[process_step]' value='[df_merged_sorted.csv].[process_step]' />
+          <map key='[step_value]' value='[df_merged_sorted.csv].[step_value]' />
+          <map key='[time_diff]' value='[df_merged_sorted.csv].[time_diff]' />
+          <map key='[total_balance]' value='[df_final_demo_cleaned.csv].[total_balance]' />
+          <map key='[visit_id]' value='[df_merged_sorted.csv].[visit_id]' />
+          <map key='[visitor_id]' value='[df_merged_sorted.csv].[visitor_id]' />
+          <map key='[years_as_client]' value='[df_final_demo_cleaned.csv].[years_as_client]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[df_final_demo_cleaned.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[df_merged_sorted.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>client_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[client_id]</local-name>
+            <parent-name>[df_final_demo_cleaned.csv]</parent-name>
+            <remote-alias>client_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>years_as_client</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[years_as_client]</local-name>
+            <parent-name>[df_final_demo_cleaned.csv]</parent-name>
+            <remote-alias>years_as_client</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>months_as_client</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[months_as_client]</local-name>
+            <parent-name>[df_final_demo_cleaned.csv]</parent-name>
+            <remote-alias>months_as_client</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>age</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[age]</local-name>
+            <parent-name>[df_final_demo_cleaned.csv]</parent-name>
+            <remote-alias>age</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gender</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[gender]</local-name>
+            <parent-name>[df_final_demo_cleaned.csv]</parent-name>
+            <remote-alias>gender</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>number_of_accounts</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[number_of_accounts]</local-name>
+            <parent-name>[df_final_demo_cleaned.csv]</parent-name>
+            <remote-alias>number_of_accounts</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_balance</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[total_balance]</local-name>
+            <parent-name>[df_final_demo_cleaned.csv]</parent-name>
+            <remote-alias>total_balance</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>calls_in_the_last_6_months</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[calls_in_the_last_6_months]</local-name>
+            <parent-name>[df_final_demo_cleaned.csv]</parent-name>
+            <remote-alias>calls_in_the_last_6_months</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>frequency_of_logons_6_months</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[frequency_of_logons_6_months]</local-name>
+            <parent-name>[df_final_demo_cleaned.csv]</parent-name>
+            <remote-alias>frequency_of_logons_6_months</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>client_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[client_id (df_merged_sorted.csv)]</local-name>
+            <parent-name>[df_merged_sorted.csv]</parent-name>
+            <remote-alias>client_id</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>visitor_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[visitor_id]</local-name>
+            <parent-name>[df_merged_sorted.csv]</parent-name>
+            <remote-alias>visitor_id</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>visit_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[visit_id]</local-name>
+            <parent-name>[df_merged_sorted.csv]</parent-name>
+            <remote-alias>visit_id</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>process_step</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[process_step]</local-name>
+            <parent-name>[df_merged_sorted.csv]</parent-name>
+            <remote-alias>process_step</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date_time</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[date_time]</local-name>
+            <parent-name>[df_merged_sorted.csv]</parent-name>
+            <remote-alias>date_time</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Variation</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Variation]</local-name>
+            <parent-name>[df_merged_sorted.csv]</parent-name>
+            <remote-alias>Variation</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>time_diff</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[time_diff]</local-name>
+            <parent-name>[df_merged_sorted.csv]</parent-name>
+            <remote-alias>time_diff</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>step_value</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[step_value]</local-name>
+            <parent-name>[df_merged_sorted.csv]</parent-name>
+            <remote-alias>step_value</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>prev_step_value</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[prev_step_value]</local-name>
+            <parent-name>[df_merged_sorted.csv]</parent-name>
+            <remote-alias>prev_step_value</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>error_flags</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[error_flags]</local-name>
+            <parent-name>[df_merged_sorted.csv]</parent-name>
+            <remote-alias>error_flags</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column aggregation='None' datatype='integer' name='[Age (bin)]' role='dimension' type='quantitative'>
+        <calculation class='bin' decimals='0' formula='[age]' peg='0' size='3.83' />
+      </column>
+      <column caption='Confirmations (Visit_id)' datatype='string' name='[Calculation_2054837716827267073]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [process_step] = &apos;confirm&apos; THEN [visit_id] END' />
+      </column>
+      <column caption='Start (Visit_id)' datatype='string' name='[Calculation_2054837716827648002]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [process_step] = &apos;start&apos; THEN [visit_id] END' />
+      </column>
+      <column caption='Completion rate Visit_id' datatype='real' name='[Calculation_2054837716827856899]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='// Completion rate for Control variation&#10;COUNTD([Calculation_2054837716827267073])/COUNTD([Calculation_2054837716827648002])*100' />
+      </column>
+      <column aggregation='None' datatype='integer' name='[Client Id (bin)]' role='dimension' type='quantitative'>
+        <calculation class='bin' decimals='5' formula='[client_id]' peg='0' size='123300' />
+      </column>
+      <column caption='Completion rate Visitor_id' datatype='real' name='[Completion rate Visit_id (copy)_2054837716830253063]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='// Completion rate for Control variation&#10;COUNTD([Confirmations (Visit_id) (copy)_2054837716829605892])/COUNTD([Start (Visit_id) (copy)_2054837716829745157])*100' />
+      </column>
+      <column caption='Completion rate Client_id' datatype='real' name='[Completion rate Visitor_id (copy)_2054837716832583690]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='// Completion rate for Control variation&#10;COUNTD([Confirmations (Visitor_id)  (copy)_2054837716832088072])/COUNTD([Start (Visitor_id)  (copy)_2054837716832108553])*100' />
+      </column>
+      <column caption='Confirmations (Visitor_id) ' datatype='string' name='[Confirmations (Visit_id) (copy)_2054837716829605892]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [process_step] = &apos;confirm&apos; THEN [visitor_id] END' />
+      </column>
+      <column caption='Confirmations (Client_id)' datatype='integer' name='[Confirmations (Visitor_id)  (copy)_2054837716832088072]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='IF [process_step] = &apos;confirm&apos; THEN [client_id (df_merged_sorted.csv)] END' />
+      </column>
+      <column caption='Start (Visitor_id) ' datatype='string' name='[Start (Visit_id) (copy)_2054837716829745157]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [process_step] = &apos;start&apos; THEN [visitor_id] END' />
+      </column>
+      <column caption='Start (Client_id)' datatype='integer' name='[Start (Visitor_id)  (copy)_2054837716832108553]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='IF [process_step] = &apos;start&apos; THEN [client_id (df_merged_sorted.csv)] END' />
+      </column>
+      <column datatype='string' name='[Variation]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='%null%' value='Other' />
+        </aliases>
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='df_final_demo_cleaned.csv' datatype='table' name='[__tableau_internal_object_id__].[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='df_merged_sorted.csv' datatype='table' name='[__tableau_internal_object_id__].[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]' role='measure' type='quantitative' />
+      <column caption='Age' datatype='real' name='[age]' role='measure' type='quantitative' />
+      <column caption='Calls In The Last 6 Months' datatype='real' name='[calls_in_the_last_6_months]' role='measure' type='quantitative' />
+      <column caption='Client Id (Df Merged Sorted.Csv)' datatype='integer' name='[client_id (df_merged_sorted.csv)]' role='dimension' type='ordinal' />
+      <column caption='Client Id' datatype='integer' name='[client_id]' role='dimension' type='ordinal' />
+      <column caption='Date Time' datatype='datetime' name='[date_time]' role='dimension' type='ordinal' />
+      <column caption='Error Flags' datatype='integer' name='[error_flags]' role='measure' type='quantitative' />
+      <column caption='Frequency Of Logons 6 Months' datatype='real' name='[frequency_of_logons_6_months]' role='measure' type='quantitative' />
+      <column caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+      <column caption='Months As Client' datatype='real' name='[months_as_client]' role='measure' type='quantitative' />
+      <column caption='Number Of Accounts' datatype='real' name='[number_of_accounts]' role='measure' type='quantitative' />
+      <column caption='Prev Step Value' datatype='real' name='[prev_step_value]' role='measure' type='quantitative' />
+      <column caption='Process Step' datatype='string' name='[process_step]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;confirm&quot;' value='Confirm' />
+          <alias key='&quot;start&quot;' value='Start' />
+          <alias key='&quot;step_1&quot;' value='Step 1' />
+          <alias key='&quot;step_2&quot;' value='Step 2' />
+          <alias key='&quot;step_3&quot;' value='Step 3' />
+        </aliases>
+      </column>
+      <column caption='Step Value' datatype='integer' name='[step_value]' role='measure' type='quantitative' />
+      <column caption='Time Diff' datatype='real' name='[time_diff]' role='measure' type='quantitative' />
+      <column caption='Total Balance' datatype='real' name='[total_balance]' role='measure' type='quantitative' />
+      <column caption='Visit Id' datatype='string' name='[visit_id]' role='dimension' type='nominal' />
+      <column caption='Visitor Id' datatype='string' name='[visitor_id]' role='dimension' type='nominal' />
+      <column caption='Years As Client' datatype='real' name='[years_as_client]' role='measure' type='quantitative' />
+      <column-instance column='[client_id]' derivation='Attribute' name='[attr:client_id:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[time_diff]' derivation='Avg' name='[avg:time_diff:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[time_diff]' derivation='Avg' name='[avg:time_diff:vtnone:qk]' pivot='key' type='quantitative' visual-totals='None' />
+      <column-instance column='[total_balance]' derivation='Avg' name='[avg:total_balance:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[client_id]' derivation='Count' name='[cnt:client_id:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[gender]' derivation='Count' name='[cnt:gender:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[number_of_accounts]' derivation='Count' name='[cnt:number_of_accounts:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[process_step]' derivation='Count' name='[cnt:process_step:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[total_balance]' derivation='Count' name='[cnt:total_balance:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[visit_id]' derivation='Count' name='[cnt:visit_id:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[visit_id]' derivation='Count' name='[cnt:visit_id:vtnone:qk]' pivot='key' type='quantitative' visual-totals='None' />
+      <column-instance column='[client_id (df_merged_sorted.csv)]' derivation='CountD' name='[ctd:client_id (df_merged_sorted.csv):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[client_id]' derivation='CountD' name='[ctd:client_id:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[gender]' derivation='CountD' name='[ctd:gender:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[process_step]' derivation='CountD' name='[ctd:process_step:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[visit_id]' derivation='CountD' name='[ctd:visit_id:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[process_step]' derivation='Count' name='[diff:cnt:process_step:qk]' pivot='key' type='quantitative'>
+        <table-calc diff-options='Relative' ordering-type='Rows' type='Difference'>
+          <address>
+            <value>-1</value>
+          </address>
+        </table-calc>
+      </column-instance>
+      <column-instance column='[Age (bin)]' derivation='None' name='[none:Age (bin):ok]' pivot='key' type='ordinal' />
+      <column-instance column='[Age (bin)]' derivation='None' name='[none:Age (bin):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Variation]' derivation='None' name='[none:Variation:nk]' pivot='key' type='nominal' />
+      <column-instance column='[client_id]' derivation='None' name='[none:client_id:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[gender]' derivation='None' name='[none:gender:nk]' pivot='key' type='nominal' />
+      <column-instance column='[process_step]' derivation='None' name='[none:process_step:nk]' pivot='key' type='nominal' />
+      <column-instance column='[total_balance]' derivation='None' name='[none:total_balance:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[years_as_client]' derivation='None' name='[none:years_as_client:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[years_as_client]' derivation='None' name='[none:years_as_client:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[process_step]' derivation='Count' name='[pcto:cnt:process_step:qk]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Rows' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[client_id]' derivation='Sum' name='[sum:client_id:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[total_balance]' derivation='Sum' name='[sum:total_balance:qk]' pivot='key' type='quantitative' />
+      <group caption='Action (Age (bin))' hidden='true' name='[Action (Age (bin))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:Age (bin):ok]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Age (bin),Variation)' hidden='true' name='[Action (Age (bin),Variation)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:Age (bin):ok]' />
+          <groupfilter function='level-members' level='[Variation]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Gender)' hidden='true' name='[Action (Gender)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[gender]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Variation)' hidden='true' name='[Action (Variation)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Variation]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Variation,Gender)' hidden='true' name='[Action (Variation,Gender)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Variation]' />
+          <groupfilter function='level-members' level='[gender]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Variation,Process Step)' hidden='true' name='[Action (Variation,Process Step)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Variation]' />
+          <groupfilter function='level-members' level='[process_step]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Variation,Years As Client)' hidden='true' name='[Action (Variation,Years As Client)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Variation]' />
+          <groupfilter function='level-members' level='[none:years_as_client:ok]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Variation1,Gender)' hidden='true' name='[Action (Variation1,Gender)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Variation]' />
+          <groupfilter function='level-members' level='[gender]' />
+        </groupfilter>
+      </group>
+      <group hidden='true' name='[Exclusions (Gender,Variation)]' name-style='unqualified' user:auto-column='exclude'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:gender:nk]' />
+          <groupfilter function='level-members' level='[none:Variation:nk]' />
+        </groupfilter>
+      </group>
+      <group hidden='true' name='[Exclusions (Variation,Years As Client)]' name-style='unqualified' user:auto-column='exclude'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:Variation:nk]' />
+          <groupfilter function='level-members' level='[none:years_as_client:qk]' />
+        </groupfilter>
+      </group>
+      <group hidden='true' name='[Inclusions (Age (bin),Variation)]' name-style='unqualified' user:auto-column='include'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:Age (bin):qk]' />
+          <groupfilter function='level-members' level='[none:Variation:nk]' />
+        </groupfilter>
+      </group>
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/tableau-temp/#TableauTemp_0t67d8g0yzdce2173majn0rj7ebc.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='05/15/2024 02:35:14 PM' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F' table='[Extract].[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+            <relation name='df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F' table='[Extract].[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]' type='table' />
+            <relation name='df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9' table='[Extract].[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]' type='table' />
+          </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+          <cols>
+            <map key='[Variation]' value='[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9].[Variation]' />
+            <map key='[age]' value='[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F].[age]' />
+            <map key='[calls_in_the_last_6_months]' value='[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F].[calls_in_the_last_6_months]' />
+            <map key='[client_id (df_merged_sorted.csv)]' value='[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9].[client_id]' />
+            <map key='[client_id]' value='[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F].[client_id]' />
+            <map key='[date_time]' value='[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9].[date_time]' />
+            <map key='[error_flags]' value='[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9].[error_flags]' />
+            <map key='[frequency_of_logons_6_months]' value='[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F].[frequency_of_logons_6_months]' />
+            <map key='[gender]' value='[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F].[gender]' />
+            <map key='[months_as_client]' value='[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F].[months_as_client]' />
+            <map key='[number_of_accounts]' value='[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F].[number_of_accounts]' />
+            <map key='[prev_step_value]' value='[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9].[prev_step_value]' />
+            <map key='[process_step]' value='[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9].[process_step]' />
+            <map key='[step_value]' value='[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9].[step_value]' />
+            <map key='[time_diff]' value='[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9].[time_diff]' />
+            <map key='[total_balance]' value='[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F].[total_balance]' />
+            <map key='[visit_id]' value='[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9].[visit_id]' />
+            <map key='[visitor_id]' value='[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9].[visitor_id]' />
+            <map key='[years_as_client]' value='[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F].[years_as_client]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>client_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[client_id]</local-name>
+              <parent-name>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</parent-name>
+              <remote-alias>client_id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>df_final_demo_cleaned.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>70595</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>years_as_client</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[years_as_client]</local-name>
+              <parent-name>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</parent-name>
+              <remote-alias>years_as_client</remote-alias>
+              <ordinal>1</ordinal>
+              <family>df_final_demo_cleaned.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>62</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>months_as_client</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[months_as_client]</local-name>
+              <parent-name>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</parent-name>
+              <remote-alias>months_as_client</remote-alias>
+              <ordinal>2</ordinal>
+              <family>df_final_demo_cleaned.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>868</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>age</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[age]</local-name>
+              <parent-name>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</parent-name>
+              <remote-alias>age</remote-alias>
+              <ordinal>3</ordinal>
+              <family>df_final_demo_cleaned.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>231</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>gender</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[gender]</local-name>
+              <parent-name>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</parent-name>
+              <remote-alias>gender</remote-alias>
+              <ordinal>4</ordinal>
+              <family>df_final_demo_cleaned.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>number_of_accounts</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[number_of_accounts]</local-name>
+              <parent-name>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</parent-name>
+              <remote-alias>number_of_accounts</remote-alias>
+              <ordinal>5</ordinal>
+              <family>df_final_demo_cleaned.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_balance</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[total_balance]</local-name>
+              <parent-name>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</parent-name>
+              <remote-alias>total_balance</remote-alias>
+              <ordinal>6</ordinal>
+              <family>df_final_demo_cleaned.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>70595</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>calls_in_the_last_6_months</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[calls_in_the_last_6_months]</local-name>
+              <parent-name>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</parent-name>
+              <remote-alias>calls_in_the_last_6_months</remote-alias>
+              <ordinal>7</ordinal>
+              <family>df_final_demo_cleaned.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>frequency_of_logons_6_months</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[frequency_of_logons_6_months]</local-name>
+              <parent-name>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</parent-name>
+              <remote-alias>frequency_of_logons_6_months</remote-alias>
+              <ordinal>8</ordinal>
+              <family>df_final_demo_cleaned.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>client_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[client_id (df_merged_sorted.csv)]</local-name>
+              <parent-name>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</parent-name>
+              <remote-alias>client_id</remote-alias>
+              <ordinal>9</ordinal>
+              <family>df_merged_sorted.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>106260</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>visitor_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[visitor_id]</local-name>
+              <parent-name>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</parent-name>
+              <remote-alias>visitor_id</remote-alias>
+              <ordinal>10</ordinal>
+              <family>df_merged_sorted.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>119233</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>visit_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[visit_id]</local-name>
+              <parent-name>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</parent-name>
+              <remote-alias>visit_id</remote-alias>
+              <ordinal>11</ordinal>
+              <family>df_merged_sorted.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>135756</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>process_step</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[process_step]</local-name>
+              <parent-name>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</parent-name>
+              <remote-alias>process_step</remote-alias>
+              <ordinal>12</ordinal>
+              <family>df_merged_sorted.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>date_time</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[date_time]</local-name>
+              <parent-name>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</parent-name>
+              <remote-alias>date_time</remote-alias>
+              <ordinal>13</ordinal>
+              <family>df_merged_sorted.csv</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>310530</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Variation</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Variation]</local-name>
+              <parent-name>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</parent-name>
+              <remote-alias>Variation</remote-alias>
+              <ordinal>14</ordinal>
+              <family>df_merged_sorted.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>time_diff</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[time_diff]</local-name>
+              <parent-name>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</parent-name>
+              <remote-alias>time_diff</remote-alias>
+              <ordinal>15</ordinal>
+              <family>df_merged_sorted.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1787</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>step_value</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[step_value]</local-name>
+              <parent-name>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</parent-name>
+              <remote-alias>step_value</remote-alias>
+              <ordinal>16</ordinal>
+              <family>df_merged_sorted.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>prev_step_value</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[prev_step_value]</local-name>
+              <parent-name>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</parent-name>
+              <remote-alias>prev_step_value</remote-alias>
+              <ordinal>17</ordinal>
+              <family>df_merged_sorted.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>error_flags</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[error_flags]</local-name>
+              <parent-name>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</parent-name>
+              <remote-alias>error_flags</remote-alias>
+              <ordinal>18</ordinal>
+              <family>df_merged_sorted.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1r8m7gq05p65ao142q4z00t6859d].[attr:client_id:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1r8m7gq05p65ao142q4z00t6859d].[avg:total_balance:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1r8m7gq05p65ao142q4z00t6859d].[cnt:client_id:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1r8m7gq05p65ao142q4z00t6859d].[cnt:process_step:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1r8m7gq05p65ao142q4z00t6859d].[ctd:client_id:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1r8m7gq05p65ao142q4z00t6859d].[ctd:process_step:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1r8m7gq05p65ao142q4z00t6859d].[diff:cnt:process_step:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1r8m7gq05p65ao142q4z00t6859d].[none:client_id:ok]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1r8m7gq05p65ao142q4z00t6859d].[none:process_step:nk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1r8m7gq05p65ao142q4z00t6859d].[pcto:cnt:process_step:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1r8m7gq05p65ao142q4z00t6859d].[sum:client_id:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.1r8m7gq05p65ao142q4z00t6859d].[cnt:visit_id:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.1r8m7gq05p65ao142q4z00t6859d].[cnt:visit_id:vtnone:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.1r8m7gq05p65ao142q4z00t6859d].[ctd:visit_id:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.1r8m7gq05p65ao142q4z00t6859d].[avg:time_diff:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.1r8m7gq05p65ao142q4z00t6859d].[avg:time_diff:vtnone:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1r8m7gq05p65ao142q4z00t6859d].[cnt:gender:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1r8m7gq05p65ao142q4z00t6859d].[cnt:total_balance:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1r8m7gq05p65ao142q4z00t6859d].[ctd:client_id (df_merged_sorted.csv):qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1r8m7gq05p65ao142q4z00t6859d].[ctd:gender:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1r8m7gq05p65ao142q4z00t6859d].[none:gender:nk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1r8m7gq05p65ao142q4z00t6859d].[none:total_balance:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1r8m7gq05p65ao142q4z00t6859d].[sum:total_balance:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[cnt:number_of_accounts:ok]' type='palette'>
+            <map to='#499894'>
+              <bucket>97</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>0</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>23527</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>33</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>205</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>8</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>23</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>745</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>108</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>10</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>50488</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>55497</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>15776</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>21310</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>2241</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>4251</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>8947</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>13</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>2</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>840</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>4696</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>18411</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>6</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>284</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>1585</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>79</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>1</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>3582</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>656</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>12529</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>39721</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>4</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:process_step:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;start&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;confirm&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;step_3&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;step_2&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>%all%</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;step_1&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:gender:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;F&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;U&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;M&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Variation:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Test&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Control&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='client_id (df_final_experiment_clients_cleaned.csv)' />
+        <field-sort-custom-order field='Variation (df_final_experiment_clients_cleaned.csv)' />
+      </field-sort-info>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='df_final_demo_cleaned.csv' id='df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F'>
+            <properties context=''>
+              <relation connection='textscan.1pf5guo0ildeho1fwha1g14sg4nn' name='df_final_demo_cleaned.csv' table='[df_final_demo_cleaned#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='client_id' ordinal='0' />
+                  <column datatype='real' name='years_as_client' ordinal='1' />
+                  <column datatype='real' name='months_as_client' ordinal='2' />
+                  <column datatype='real' name='age' ordinal='3' />
+                  <column datatype='string' name='gender' ordinal='4' />
+                  <column datatype='real' name='number_of_accounts' ordinal='5' />
+                  <column datatype='real' name='total_balance' ordinal='6' />
+                  <column datatype='real' name='calls_in_the_last_6_months' ordinal='7' />
+                  <column datatype='real' name='frequency_of_logons_6_months' ordinal='8' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F' table='[Extract].[df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F]' type='table' />
+            </properties>
+          </object>
+          <object caption='df_merged_sorted.csv' id='df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9'>
+            <properties context=''>
+              <relation connection='textscan.1pf5guo0ildeho1fwha1g14sg4nn' name='df_merged_sorted.csv' table='[df_merged_sorted#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='client_id' ordinal='0' />
+                  <column datatype='string' name='visitor_id' ordinal='1' />
+                  <column datatype='string' name='visit_id' ordinal='2' />
+                  <column datatype='string' name='process_step' ordinal='3' />
+                  <column datatype='datetime' name='date_time' ordinal='4' />
+                  <column datatype='string' name='Variation' ordinal='5' />
+                  <column datatype='real' name='time_diff' ordinal='6' />
+                  <column datatype='integer' name='step_value' ordinal='7' />
+                  <column datatype='real' name='prev_step_value' ordinal='8' />
+                  <column datatype='integer' name='error_flags' ordinal='9' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9' table='[Extract].[df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[client_id]' />
+              <expression op='[client_id (df_merged_sorted.csv)]' />
+            </expression>
+            <first-end-point object-id='df_final_demo_cleaned.csv_39B1CDC0726048958931A63B08C80C0F' />
+            <second-end-point object-id='df_merged_sorted.csv_87EF3FE664F1402F83096D9BBD7FAFE9' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='Filter 8 (generated)' name='[Action11_82F55A1D7C1F435CABA58052CB2F3903]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Error/Completion/Age' type='sheet' worksheet='Completion Rate / Visit id' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Error/Completion/Age' />
+      </command>
+    </action>
+    <action caption='Filter 11 (generated)' name='[Action13_8B8CFF1BCDA34E4BBDD2116704C9983D]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Balance/Gender/Age' type='sheet' worksheet='Gender of all clients' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Balance/Gender/Age' />
+      </command>
+    </action>
+    <action caption='Filter 10 (generated)' name='[Action13_8FC322B4D7064F5EA7FF3568B03E3D41]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Balance/Gender/Age' type='sheet' worksheet='Age of all clients' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Balance/Gender/Age' />
+      </command>
+    </action>
+    <action caption='Filter 13 (generated)' name='[Action14_49ABB406F62040E5B968F31632A6AD15]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Balance/Gender/Age' type='sheet' worksheet='Total Balance/Group' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Balance/Gender/Age' />
+      </command>
+    </action>
+    <action caption='Filter 9 (generated)' name='[Action14_990673FDDA0540AB9FE1CDC3ABA313B6]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Gender/Time' type='sheet' worksheet='Gender of Control/Test' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Gender/Time' />
+      </command>
+    </action>
+    <action caption='Filter 12 (generated)' name='[Action14_9ACA09FCDDDB4124B72837B6919ED3A8]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Age/Gender Control/Test' type='sheet' worksheet='Age of Control/Test' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Age/Gender Control/Test' />
+      </command>
+    </action>
+    <action caption='Filter 2 (generated)' name='[Action3_5F5BFDD3552C41519A2536F26950B577]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Age/Gender' type='sheet' worksheet='Gender of all clients' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Age/Gender' />
+      </command>
+    </action>
+    <action caption='Filter 3 (generated)' name='[Action4_325D5762200D41AF84B7B8CC6969268F]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Age/Gender Control/Test' type='sheet' worksheet='Gender of Control/Test' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Age/Gender Control/Test' />
+      </command>
+    </action>
+    <action caption='Filter 1 (generated)' name='[Action4_90AEB78E73A54BA790FC2A6A1854FD13]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Tenure / Age' type='sheet' worksheet='Age of all clients' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Tenure / Age' />
+      </command>
+    </action>
+    <action caption='Filter 4 (generated)' name='[Action5_7CBFE6E484094693B77C09EEAD05E187]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Age/Gender' type='sheet' worksheet='Age of all clients' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Age/Gender' />
+      </command>
+    </action>
+    <action caption='Filter 5 (generated)' name='[Action5_C3F0A7B05F66442CB06CBC57A8F18021]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Tenure / Age' type='sheet' worksheet='Tenure comparison' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Tenure / Age' />
+      </command>
+    </action>
+    <action caption='Highlight 1 (generated)' name='[Action7_17E77C12ECB04E33A989516BFDD71B5D]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Tenure / Age' type='sheet' />
+      <command command='tsc:brush'>
+        <param name='field-captions' value='Variation' />
+        <param name='target' value='Tenure / Age' />
+      </command>
+    </action>
+    <action caption='Filter 6 (generated)' name='[Action8_6334E718FF8E4B2B8F18AA1C8D43BE56]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Error/Completion/Age' type='sheet' worksheet='Error/Step' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Error/Completion/Age' />
+      </command>
+    </action>
+    <action caption='Filter 7 (generated)' name='[Action9_9EB2B93A76CE4FB9A37CCD63BA677090]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Error/Completion/Age' type='sheet' worksheet='Age of all clients' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Error/Completion/Age' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet lock-quick-filters='true' name='Age of Control/Test'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_final_demo_cleaned+' name='federated.1r8m7gq05p65ao142q4z00t6859d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1r8m7gq05p65ao142q4z00t6859d'>
+            <column aggregation='None' datatype='integer' name='[Age (bin)]' role='dimension' type='quantitative'>
+              <calculation class='bin' decimals='0' formula='[age]' peg='0' size='3.83' />
+            </column>
+            <column datatype='string' name='[Variation]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='%null%' value='Other' />
+              </aliases>
+            </column>
+            <column caption='Age' datatype='real' name='[age]' role='measure' type='quantitative' />
+            <column caption='Client Id (Df Merged Sorted.Csv)' datatype='integer' name='[client_id (df_merged_sorted.csv)]' role='dimension' type='ordinal' />
+            <column-instance column='[client_id (df_merged_sorted.csv)]' derivation='CountD' name='[ctd:client_id (df_merged_sorted.csv):qk]' pivot='key' type='quantitative' />
+            <column caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+            <column-instance column='[Age (bin)]' derivation='None' name='[none:Age (bin):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Variation]' derivation='None' name='[none:Variation:nk]' pivot='key' type='nominal' />
+            <column-instance column='[gender]' derivation='None' name='[none:gender:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Gender)]'>
+            <groupfilter function='level-members' level='[gender]' user:ui-action-filter='[Action3_5F5BFDD3552C41519A2536F26950B577]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation,Gender)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action4_325D5762200D41AF84B7B8CC6969268F]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Variation]' />
+              <groupfilter function='level-members' level='[gender]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Exclusions (Gender,Variation)]' filter-group='3'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='level-members' level='[none:gender:nk]' />
+                <groupfilter function='level-members' level='[none:Variation:nk]' />
+              </groupfilter>
+              <groupfilter function='reorder-dimensionality'>
+                <groupfilter function='union'>
+                  <groupfilter function='crossjoin'>
+                    <groupfilter function='member' level='[none:Variation:nk]' member='%null%' />
+                    <groupfilter function='union'>
+                      <groupfilter function='member' level='[none:gender:nk]' member='&quot;F&quot;' />
+                      <groupfilter function='member' level='[none:gender:nk]' member='&quot;M&quot;' />
+                      <groupfilter function='member' level='[none:gender:nk]' member='&quot;U&quot;' />
+                    </groupfilter>
+                  </groupfilter>
+                  <groupfilter function='crossjoin'>
+                    <groupfilter function='union'>
+                      <groupfilter function='member' level='[none:Variation:nk]' member='&quot;Control&quot;' />
+                      <groupfilter function='member' level='[none:Variation:nk]' member='&quot;Test&quot;' />
+                    </groupfilter>
+                    <groupfilter function='member' level='[none:gender:nk]' member='%null%' />
+                  </groupfilter>
+                </groupfilter>
+                <order>
+                  <hierarchy name='[none:gender:nk]' />
+                  <hierarchy name='[none:Variation:nk]' />
+                </order>
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Inclusions (Age (bin),Variation)]'>
+            <groupfilter function='crossjoin' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Age (bin):qk]' />
+              <groupfilter function='level-members' level='[none:Variation:nk]' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Gender)]</column>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Inclusions (Age (bin),Variation)]</column>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation,Gender)]</column>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Exclusions (Gender,Variation)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='width' field='[federated.1r8m7gq05p65ao142q4z00t6859d].[ctd:client_id (df_merged_sorted.csv):qk]' value='64' />
+            <format attr='title' class='0' field='[federated.1r8m7gq05p65ao142q4z00t6859d].[ctd:client_id (df_merged_sorted.csv):qk]' scope='rows' value='' />
+            <format attr='title' class='0' field='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:Age (bin):qk]' scope='cols' value='' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing custom-mark-size-in-axis-units='1.0' mark-alignment='mark-alignment-left' mark-sizing-setting='marks-scaling-on' use-custom-mark-size='false' />
+            <encodings>
+              <text column='[federated.1r8m7gq05p65ao142q4z00t6859d].[ctd:client_id (df_merged_sorted.csv):qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1r8m7gq05p65ao142q4z00t6859d].[ctd:client_id (df_merged_sorted.csv):qk]</rows>
+        <cols>([federated.1r8m7gq05p65ao142q4z00t6859d].[none:Variation:nk] * [federated.1r8m7gq05p65ao142q4z00t6859d].[none:Age (bin):qk])</cols>
+        <show-full-range>
+          <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[none:Age (bin):qk]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{726F4D5F-5C63-43EB-A7FC-355A70A3C574}' />
+    </worksheet>
+    <worksheet name='Age of all clients'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_final_demo_cleaned+' name='federated.1r8m7gq05p65ao142q4z00t6859d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1r8m7gq05p65ao142q4z00t6859d'>
+            <column aggregation='None' datatype='integer' name='[Age (bin)]' role='dimension' type='quantitative'>
+              <calculation class='bin' decimals='0' formula='[age]' peg='0' size='3.83' />
+            </column>
+            <column datatype='string' name='[Variation]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='%null%' value='Other' />
+              </aliases>
+            </column>
+            <column caption='Age' datatype='real' name='[age]' role='measure' type='quantitative' />
+            <column caption='Client Id' datatype='integer' name='[client_id]' role='dimension' type='ordinal' />
+            <column-instance column='[age]' derivation='Count' name='[cnt:age:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[client_id]' derivation='Count' name='[cnt:client_id:qk]' pivot='key' type='quantitative' />
+            <column caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+            <column-instance column='[Age (bin)]' derivation='None' name='[none:Age (bin):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[years_as_client]' derivation='None' name='[none:years_as_client:ok]' pivot='key' type='ordinal' />
+            <column caption='Process Step' datatype='string' name='[process_step]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;confirm&quot;' value='Confirm' />
+                <alias key='&quot;start&quot;' value='Start' />
+                <alias key='&quot;step_1&quot;' value='Step 1' />
+                <alias key='&quot;step_2&quot;' value='Step 2' />
+                <alias key='&quot;step_3&quot;' value='Step 3' />
+              </aliases>
+            </column>
+            <column caption='Years As Client' datatype='real' name='[years_as_client]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Gender)]'>
+            <groupfilter function='level-members' level='[gender]' user:ui-action-filter='[Action3_5F5BFDD3552C41519A2536F26950B577]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation)]'>
+            <groupfilter function='level-members' level='[Variation]' user:ui-action-filter='[Action11_C0FB3D77E8534D87BA0BEF3C57052BCC]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation,Process Step)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action8_6334E718FF8E4B2B8F18AA1C8D43BE56]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Variation]' />
+              <groupfilter function='level-members' level='[process_step]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation,Years As Client)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action5_C3F0A7B05F66442CB06CBC57A8F18021]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Variation]' />
+              <groupfilter function='level-members' level='[none:years_as_client:ok]' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Gender)]</column>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation,Years As Client)]</column>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation,Process Step)]</column>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.1r8m7gq05p65ao142q4z00t6859d].[cnt:age:qk]' scope='rows' value='' />
+            <format attr='title' class='0' field='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:Age (bin):qk]' scope='cols' value='' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing custom-mark-size-in-axis-units='1.0' mark-alignment='mark-alignment-left' mark-sizing-setting='marks-scaling-on' use-custom-mark-size='false' />
+            <encodings>
+              <text column='[federated.1r8m7gq05p65ao142q4z00t6859d].[cnt:client_id:qk]' />
+              <lod column='[federated.1r8m7gq05p65ao142q4z00t6859d].[cnt:client_id:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1r8m7gq05p65ao142q4z00t6859d].[cnt:age:qk]</rows>
+        <cols total='true'>[federated.1r8m7gq05p65ao142q4z00t6859d].[none:Age (bin):qk]</cols>
+        <show-full-range>
+          <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Age (bin)]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{95B48461-542C-40D0-9152-47E415E38A44}' />
+    </worksheet>
+    <worksheet name='Completion Rate / Visit id'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_final_demo_cleaned+' name='federated.1r8m7gq05p65ao142q4z00t6859d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1r8m7gq05p65ao142q4z00t6859d'>
+            <column aggregation='None' datatype='integer' name='[Age (bin)]' role='dimension' type='quantitative'>
+              <calculation class='bin' decimals='0' formula='[age]' peg='0' size='3.83' />
+            </column>
+            <column caption='Confirmations (Visit_id)' datatype='string' name='[Calculation_2054837716827267073]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [process_step] = &apos;confirm&apos; THEN [visit_id] END' />
+            </column>
+            <column caption='Start (Visit_id)' datatype='string' name='[Calculation_2054837716827648002]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [process_step] = &apos;start&apos; THEN [visit_id] END' />
+            </column>
+            <column caption='Completion rate Visit_id' datatype='real' name='[Calculation_2054837716827856899]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='// Completion rate for Control variation&#10;COUNTD([Calculation_2054837716827267073])/COUNTD([Calculation_2054837716827648002])*100' />
+            </column>
+            <column datatype='string' name='[Variation]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='%null%' value='Other' />
+              </aliases>
+            </column>
+            <column caption='Age' datatype='real' name='[age]' role='measure' type='quantitative' />
+            <column-instance column='[Age (bin)]' derivation='None' name='[none:Age (bin):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Variation]' derivation='None' name='[none:Variation:nk]' pivot='key' type='nominal' />
+            <column caption='Process Step' datatype='string' name='[process_step]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;confirm&quot;' value='Confirm' />
+                <alias key='&quot;start&quot;' value='Start' />
+                <alias key='&quot;step_1&quot;' value='Step 1' />
+                <alias key='&quot;step_2&quot;' value='Step 2' />
+                <alias key='&quot;step_3&quot;' value='Step 3' />
+              </aliases>
+            </column>
+            <column-instance column='[Calculation_2054837716827856899]' derivation='User' name='[usr:Calculation_2054837716827856899:qk]' pivot='key' type='quantitative' />
+            <column caption='Visit Id' datatype='string' name='[visit_id]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Age (bin))]'>
+            <groupfilter function='level-members' level='[none:Age (bin):ok]' user:ui-action-filter='[Action9_9EB2B93A76CE4FB9A37CCD63BA677090]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation,Process Step)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action8_6334E718FF8E4B2B8F18AA1C8D43BE56]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Variation]' />
+              <groupfilter function='level-members' level='[process_step]' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation,Process Step)]</column>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Age (bin))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.1r8m7gq05p65ao142q4z00t6859d].[usr:Calculation_2054837716827856899:qk]' scope='rows' value='' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height-header' value='17' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.1r8m7gq05p65ao142q4z00t6859d].[usr:Calculation_2054837716827856899:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:Variation:nk]' />
+              <text column='[federated.1r8m7gq05p65ao142q4z00t6859d].[usr:Calculation_2054837716827856899:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1r8m7gq05p65ao142q4z00t6859d].[usr:Calculation_2054837716827856899:qk]</rows>
+        <cols>[federated.1r8m7gq05p65ao142q4z00t6859d].[none:Variation:nk]</cols>
+      </table>
+      <simple-id uuid='{0D1CBBDF-5FAB-4507-A40B-D1A898E54CD1}' />
+    </worksheet>
+    <worksheet name='Completion Rate Client_id'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_final_demo_cleaned+' name='federated.1r8m7gq05p65ao142q4z00t6859d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1r8m7gq05p65ao142q4z00t6859d'>
+            <column caption='Completion rate Client_id' datatype='real' name='[Completion rate Visitor_id (copy)_2054837716832583690]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='// Completion rate for Control variation&#10;COUNTD([Confirmations (Visitor_id)  (copy)_2054837716832088072])/COUNTD([Start (Visitor_id)  (copy)_2054837716832108553])*100' />
+            </column>
+            <column caption='Confirmations (Client_id)' datatype='integer' name='[Confirmations (Visitor_id)  (copy)_2054837716832088072]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='IF [process_step] = &apos;confirm&apos; THEN [client_id (df_merged_sorted.csv)] END' />
+            </column>
+            <column caption='Start (Client_id)' datatype='integer' name='[Start (Visitor_id)  (copy)_2054837716832108553]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='IF [process_step] = &apos;start&apos; THEN [client_id (df_merged_sorted.csv)] END' />
+            </column>
+            <column datatype='string' name='[Variation]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='%null%' value='Other' />
+              </aliases>
+            </column>
+            <column caption='Client Id (Df Merged Sorted.Csv)' datatype='integer' name='[client_id (df_merged_sorted.csv)]' role='dimension' type='ordinal' />
+            <column-instance column='[Variation]' derivation='None' name='[none:Variation:nk]' pivot='key' type='nominal' />
+            <column caption='Process Step' datatype='string' name='[process_step]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;confirm&quot;' value='Confirm' />
+                <alias key='&quot;start&quot;' value='Start' />
+                <alias key='&quot;step_1&quot;' value='Step 1' />
+                <alias key='&quot;step_2&quot;' value='Step 2' />
+                <alias key='&quot;step_3&quot;' value='Step 3' />
+              </aliases>
+            </column>
+            <column-instance column='[Completion rate Visitor_id (copy)_2054837716832583690]' derivation='User' name='[usr:Completion rate Visitor_id (copy)_2054837716832583690:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.1r8m7gq05p65ao142q4z00t6859d].[usr:Completion rate Visitor_id (copy)_2054837716832583690:qk]' scope='rows' value='' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:Variation:nk]' />
+              <text column='[federated.1r8m7gq05p65ao142q4z00t6859d].[usr:Completion rate Visitor_id (copy)_2054837716832583690:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1r8m7gq05p65ao142q4z00t6859d].[usr:Completion rate Visitor_id (copy)_2054837716832583690:qk]</rows>
+        <cols>[federated.1r8m7gq05p65ao142q4z00t6859d].[none:Variation:nk]</cols>
+        <percentages enabled='false' mode='cell-in-pane' />
+      </table>
+      <simple-id uuid='{F866E0C6-649A-4926-BE8B-7E261C8C39D4}' />
+    </worksheet>
+    <worksheet name='Completion Rate Visitor_id'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_final_demo_cleaned+' name='federated.1r8m7gq05p65ao142q4z00t6859d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1r8m7gq05p65ao142q4z00t6859d'>
+            <column caption='Completion rate Visitor_id' datatype='real' name='[Completion rate Visit_id (copy)_2054837716830253063]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='// Completion rate for Control variation&#10;COUNTD([Confirmations (Visit_id) (copy)_2054837716829605892])/COUNTD([Start (Visit_id) (copy)_2054837716829745157])*100' />
+            </column>
+            <column caption='Confirmations (Visitor_id) ' datatype='string' name='[Confirmations (Visit_id) (copy)_2054837716829605892]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [process_step] = &apos;confirm&apos; THEN [visitor_id] END' />
+            </column>
+            <column caption='Start (Visitor_id) ' datatype='string' name='[Start (Visit_id) (copy)_2054837716829745157]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [process_step] = &apos;start&apos; THEN [visitor_id] END' />
+            </column>
+            <column datatype='string' name='[Variation]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='%null%' value='Other' />
+              </aliases>
+            </column>
+            <column-instance column='[Variation]' derivation='None' name='[none:Variation:nk]' pivot='key' type='nominal' />
+            <column caption='Process Step' datatype='string' name='[process_step]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;confirm&quot;' value='Confirm' />
+                <alias key='&quot;start&quot;' value='Start' />
+                <alias key='&quot;step_1&quot;' value='Step 1' />
+                <alias key='&quot;step_2&quot;' value='Step 2' />
+                <alias key='&quot;step_3&quot;' value='Step 3' />
+              </aliases>
+            </column>
+            <column-instance column='[Completion rate Visit_id (copy)_2054837716830253063]' derivation='User' name='[usr:Completion rate Visit_id (copy)_2054837716830253063:qk]' pivot='key' type='quantitative' />
+            <column caption='Visitor Id' datatype='string' name='[visitor_id]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.1r8m7gq05p65ao142q4z00t6859d].[usr:Completion rate Visit_id (copy)_2054837716830253063:qk]' scope='rows' value='' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:Variation:nk]' />
+              <text column='[federated.1r8m7gq05p65ao142q4z00t6859d].[usr:Completion rate Visit_id (copy)_2054837716830253063:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1r8m7gq05p65ao142q4z00t6859d].[usr:Completion rate Visit_id (copy)_2054837716830253063:qk]</rows>
+        <cols>[federated.1r8m7gq05p65ao142q4z00t6859d].[none:Variation:nk]</cols>
+      </table>
+      <simple-id uuid='{E54191DF-E3B8-4773-9F6B-FE9DDE34D709}' />
+    </worksheet>
+    <worksheet name='Error/Step'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_final_demo_cleaned+' name='federated.1r8m7gq05p65ao142q4z00t6859d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1r8m7gq05p65ao142q4z00t6859d'>
+            <column aggregation='None' datatype='integer' name='[Age (bin)]' role='dimension' type='quantitative'>
+              <calculation class='bin' decimals='0' formula='[age]' peg='0' size='3.83' />
+            </column>
+            <column datatype='string' name='[Variation]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='%null%' value='Other' />
+              </aliases>
+            </column>
+            <column caption='Age' datatype='real' name='[age]' role='measure' type='quantitative' />
+            <column caption='Error Flags' datatype='integer' name='[error_flags]' role='measure' type='quantitative' />
+            <column-instance column='[Age (bin)]' derivation='None' name='[none:Age (bin):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Variation]' derivation='None' name='[none:Variation:nk]' pivot='key' type='nominal' />
+            <column-instance column='[process_step]' derivation='None' name='[none:process_step:nk]' pivot='key' type='nominal' />
+            <column-instance column='[error_flags]' derivation='Sum' name='[pcto:sum:error_flags:qk:3]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Pane' type='PctTotal' />
+            </column-instance>
+            <column caption='Process Step' datatype='string' name='[process_step]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;confirm&quot;' value='Confirm' />
+                <alias key='&quot;start&quot;' value='Start' />
+                <alias key='&quot;step_1&quot;' value='Step 1' />
+                <alias key='&quot;step_2&quot;' value='Step 2' />
+                <alias key='&quot;step_3&quot;' value='Step 3' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Age (bin))]'>
+            <groupfilter function='level-members' level='[none:Age (bin):ok]' user:ui-action-filter='[Action9_9EB2B93A76CE4FB9A37CCD63BA677090]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Age (bin),Variation)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action9_5883DC98BC9A4A03B8430FF0FE2CD531]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Age (bin):ok]' />
+              <groupfilter function='level-members' level='[Variation]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation)]'>
+            <groupfilter function='level-members' level='[Variation]' user:ui-action-filter='[Action11_C0FB3D77E8534D87BA0BEF3C57052BCC]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:process_step:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:process_step:nk]' />
+              <groupfilter function='member' level='[none:process_step:nk]' member='&quot;confirm&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:process_step:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;start&quot;</bucket>
+              <bucket>&quot;step_1&quot;</bucket>
+              <bucket>&quot;step_2&quot;</bucket>
+              <bucket>&quot;step_3&quot;</bucket>
+              <bucket>&quot;confirm&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[none:process_step:nk]</column>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Age (bin),Variation)]</column>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Age (bin))]</column>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.1r8m7gq05p65ao142q4z00t6859d].[pcto:sum:error_flags:qk:3]' scope='rows' value='' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:process_step:nk]' value='110' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:process_step:nk]' />
+              <text column='[federated.1r8m7gq05p65ao142q4z00t6859d].[pcto:sum:error_flags:qk:3]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1r8m7gq05p65ao142q4z00t6859d].[pcto:sum:error_flags:qk:3]</rows>
+        <cols>([federated.1r8m7gq05p65ao142q4z00t6859d].[none:Variation:nk] / [federated.1r8m7gq05p65ao142q4z00t6859d].[none:process_step:nk])</cols>
+        <percentages enabled='true' mode='pane' />
+      </table>
+      <simple-id uuid='{D8C7A455-A1EF-4256-A8C9-4A9C2CEB7160}' />
+    </worksheet>
+    <worksheet lock-quick-filters='true' name='Gender of Control/Test'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_final_demo_cleaned+' name='federated.1r8m7gq05p65ao142q4z00t6859d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1r8m7gq05p65ao142q4z00t6859d'>
+            <column aggregation='None' datatype='integer' name='[Age (bin)]' role='dimension' type='quantitative'>
+              <calculation class='bin' decimals='0' formula='[age]' peg='0' size='3.83' />
+            </column>
+            <column datatype='string' name='[Variation]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='%null%' value='Other' />
+              </aliases>
+            </column>
+            <column caption='Age' datatype='real' name='[age]' role='measure' type='quantitative' />
+            <column caption='Client Id (Df Merged Sorted.Csv)' datatype='integer' name='[client_id (df_merged_sorted.csv)]' role='dimension' type='ordinal' />
+            <column-instance column='[client_id (df_merged_sorted.csv)]' derivation='CountD' name='[ctd:client_id (df_merged_sorted.csv):qk]' pivot='key' type='quantitative' />
+            <column caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+            <column-instance column='[Age (bin)]' derivation='None' name='[none:Age (bin):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Variation]' derivation='None' name='[none:Variation:nk]' pivot='key' type='nominal' />
+            <column-instance column='[gender]' derivation='None' name='[none:gender:nk]' pivot='key' type='nominal' />
+            <column-instance column='[gender]' derivation='Count' name='[pcto:cnt:gender:qk:5]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='ColumnInPane' type='PctTotal' />
+            </column-instance>
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Age (bin),Variation)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action14_9ACA09FCDDDB4124B72837B6919ED3A8]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Age (bin):ok]' />
+              <groupfilter function='level-members' level='[Variation]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Exclusions (Gender,Variation)]' filter-group='3'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='level-members' level='[none:gender:nk]' />
+                <groupfilter function='level-members' level='[none:Variation:nk]' />
+              </groupfilter>
+              <groupfilter function='reorder-dimensionality'>
+                <groupfilter function='union'>
+                  <groupfilter function='crossjoin'>
+                    <groupfilter function='member' level='[none:Variation:nk]' member='%null%' />
+                    <groupfilter function='union'>
+                      <groupfilter function='member' level='[none:gender:nk]' member='&quot;F&quot;' />
+                      <groupfilter function='member' level='[none:gender:nk]' member='&quot;M&quot;' />
+                      <groupfilter function='member' level='[none:gender:nk]' member='&quot;U&quot;' />
+                    </groupfilter>
+                  </groupfilter>
+                  <groupfilter function='crossjoin'>
+                    <groupfilter function='union'>
+                      <groupfilter function='member' level='[none:Variation:nk]' member='&quot;Control&quot;' />
+                      <groupfilter function='member' level='[none:Variation:nk]' member='&quot;Test&quot;' />
+                    </groupfilter>
+                    <groupfilter function='member' level='[none:gender:nk]' member='%null%' />
+                  </groupfilter>
+                </groupfilter>
+                <order>
+                  <hierarchy name='[none:gender:nk]' />
+                  <hierarchy name='[none:Variation:nk]' />
+                </order>
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:Variation:nk]'>
+            <groupfilter function='level-members' level='[none:Variation:nk]' user:ui-enumeration='all' user:ui-exclude='true' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[none:Variation:nk]</column>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Exclusions (Gender,Variation)]</column>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Age (bin),Variation)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' value='576' />
+            <format attr='width' field='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:Variation:nk]' value='563' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height' field='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:Variation:nk]' value='21' />
+            <format attr='height-header' value='10' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-width' data-class='total' value='0' />
+            <format attr='border-style' data-class='total' value='none' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='line-pattern-only' scope='cols' value='dashed' />
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:gender:nk]' />
+              <lod column='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:gender:nk]' />
+              <text column='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:gender:nk]' />
+              <text column='[federated.1r8m7gq05p65ao142q4z00t6859d].[pcto:cnt:gender:qk:5]' />
+              <text column='[federated.1r8m7gq05p65ao142q4z00t6859d].[ctd:client_id (df_merged_sorted.csv):qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='has-stroke' value='false' />
+                <format attr='size' value='0.84558010101318359' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols>[federated.1r8m7gq05p65ao142q4z00t6859d].[none:Variation:nk]</cols>
+        <percentages enabled='true' mode='column-in-pane' />
+      </table>
+      <simple-id uuid='{7652E438-07DB-4B5F-BA76-DF698D69F2DA}' />
+    </worksheet>
+    <worksheet name='Gender of all clients'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_final_demo_cleaned+' name='federated.1r8m7gq05p65ao142q4z00t6859d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1r8m7gq05p65ao142q4z00t6859d'>
+            <column aggregation='None' datatype='integer' name='[Age (bin)]' role='dimension' type='quantitative'>
+              <calculation class='bin' decimals='0' formula='[age]' peg='0' size='3.83' />
+            </column>
+            <column datatype='string' name='[Variation]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='%null%' value='Other' />
+              </aliases>
+            </column>
+            <column caption='Age' datatype='real' name='[age]' role='measure' type='quantitative' />
+            <column caption='Client Id' datatype='integer' name='[client_id]' role='dimension' type='ordinal' />
+            <column-instance column='[client_id]' derivation='CountD' name='[ctd:client_id:qk]' pivot='key' type='quantitative' />
+            <column caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+            <column-instance column='[Age (bin)]' derivation='None' name='[none:Age (bin):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[gender]' derivation='None' name='[none:gender:nk]' pivot='key' type='nominal' />
+            <column-instance column='[years_as_client]' derivation='None' name='[none:years_as_client:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[client_id]' derivation='Count' name='[pcto:cnt:client_id:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Table' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[gender]' derivation='Count' name='[pcto:cnt:gender:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Table' type='PctTotal' />
+            </column-instance>
+            <column caption='Process Step' datatype='string' name='[process_step]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;confirm&quot;' value='Confirm' />
+                <alias key='&quot;start&quot;' value='Start' />
+                <alias key='&quot;step_1&quot;' value='Step 1' />
+                <alias key='&quot;step_2&quot;' value='Step 2' />
+                <alias key='&quot;step_3&quot;' value='Step 3' />
+              </aliases>
+            </column>
+            <column caption='Years As Client' datatype='real' name='[years_as_client]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Age (bin))]'>
+            <groupfilter function='level-members' level='[none:Age (bin):ok]' user:ui-action-filter='[Action5_7CBFE6E484094693B77C09EEAD05E187]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Age (bin),Variation)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action4_86AD6033A4924882BC38DF37C1FB490C]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Age (bin):ok]' />
+              <groupfilter function='level-members' level='[Variation]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation)]'>
+            <groupfilter function='level-members' level='[Variation]' user:ui-action-filter='[Action14_49ABB406F62040E5B968F31632A6AD15]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation,Gender)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2_597A0C71BF814727AE06D8FE49E5619A]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Variation]' />
+              <groupfilter function='level-members' level='[gender]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation,Process Step)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action5_A6AB6A0E1BC843D692173D14E95DF6B1]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Variation]' />
+              <groupfilter function='level-members' level='[process_step]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation,Years As Client)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action7_5EB21EAECAFA4B39974771D0AF65D234]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Variation]' />
+              <groupfilter function='level-members' level='[none:years_as_client:ok]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:gender:nk]'>
+            <groupfilter function='level-members' level='[none:gender:nk]' user:ui-enumeration='all' user:ui-exclude='true' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[none:gender:nk]</column>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation,Gender)]</column>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Age (bin),Variation)]</column>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation,Process Step)]</column>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation,Years As Client)]</column>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Age (bin))]</column>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:gender:nk]' />
+              <wedge-size column='[federated.1r8m7gq05p65ao142q4z00t6859d].[pcto:cnt:client_id:qk]' />
+              <size column='[federated.1r8m7gq05p65ao142q4z00t6859d].[pcto:cnt:client_id:qk]' />
+              <text column='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:gender:nk]' />
+              <text column='[federated.1r8m7gq05p65ao142q4z00t6859d].[pcto:cnt:gender:qk]' />
+              <text column='[federated.1r8m7gq05p65ao142q4z00t6859d].[ctd:client_id:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='size' value='1.5052486658096313' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+        <percentages enabled='true' mode='table' />
+      </table>
+      <simple-id uuid='{4A90C8A3-BA59-4866-A37A-A45588FF11BC}' />
+    </worksheet>
+    <worksheet name='Sheet 13'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{D7D56F67-96FD-42C2-94FD-F3ACB3044EBE}' />
+    </worksheet>
+    <worksheet name='Tenure comparison'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_final_demo_cleaned+' name='federated.1r8m7gq05p65ao142q4z00t6859d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1r8m7gq05p65ao142q4z00t6859d'>
+            <column aggregation='None' datatype='integer' name='[Age (bin)]' role='dimension' type='quantitative'>
+              <calculation class='bin' decimals='0' formula='[age]' peg='0' size='3.83' />
+            </column>
+            <column datatype='string' name='[Variation]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='%null%' value='Other' />
+              </aliases>
+            </column>
+            <column caption='Age' datatype='real' name='[age]' role='measure' type='quantitative' />
+            <column caption='Client Id' datatype='integer' name='[client_id]' role='dimension' type='ordinal' />
+            <column-instance column='[client_id]' derivation='Count' name='[cnt:client_id:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[client_id]' derivation='CountD' name='[ctd:client_id:qk]' pivot='key' type='quantitative' />
+            <column caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+            <column-instance column='[Age (bin)]' derivation='None' name='[none:Age (bin):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Variation]' derivation='None' name='[none:Variation:nk]' pivot='key' type='nominal' />
+            <column-instance column='[client_id]' derivation='None' name='[none:client_id:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[years_as_client]' derivation='None' name='[none:years_as_client:qk]' pivot='key' type='quantitative' />
+            <column caption='Years As Client' datatype='real' name='[years_as_client]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Age (bin))]'>
+            <groupfilter function='level-members' level='[none:Age (bin):ok]' user:ui-action-filter='[Action4_90AEB78E73A54BA790FC2A6A1854FD13]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Gender)]'>
+            <groupfilter function='level-members' level='[gender]' user:ui-action-filter='[Action3_5F5BFDD3552C41519A2536F26950B577]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation,Gender)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2_597A0C71BF814727AE06D8FE49E5619A]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Variation]' />
+              <groupfilter function='level-members' level='[gender]' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:Variation:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>%null%</bucket>
+              <bucket>&quot;Test&quot;</bucket>
+              <bucket>&quot;Control&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:client_id:ok]'>
+            <groupfilter function='level-members' level='[none:client_id:ok]' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-manual-selection-is-empty='true' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[none:client_id:ok]</column>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation,Gender)]</column>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Gender)]</column>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Age (bin))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.1r8m7gq05p65ao142q4z00t6859d].[cnt:client_id:qk]' scope='rows' value='' />
+            <format attr='title' class='0' field='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:years_as_client:qk]' scope='cols' value='' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='omit-on-special' field='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:years_as_client:qk]' value='false' />
+            <format attr='break-on-special' field='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:years_as_client:qk]' value='false' />
+            <format attr='show-null-value-warning' field='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:years_as_client:qk]' value='false' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Area' />
+            <encodings>
+              <color column='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:Variation:nk]' />
+              <lod column='[federated.1r8m7gq05p65ao142q4z00t6859d].[ctd:client_id:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-orientation' value='0' />
+                <format attr='vertical-align' value='bottom' />
+                <format attr='text-align' value='auto' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-transparency' value='231' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1r8m7gq05p65ao142q4z00t6859d].[cnt:client_id:qk]</rows>
+        <cols>[federated.1r8m7gq05p65ao142q4z00t6859d].[none:years_as_client:qk]</cols>
+      </table>
+      <simple-id uuid='{A2129ACD-3934-49AD-B618-20A0E340F7B5}' />
+    </worksheet>
+    <worksheet name='Time'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_final_demo_cleaned+' name='federated.1r8m7gq05p65ao142q4z00t6859d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1r8m7gq05p65ao142q4z00t6859d'>
+            <column aggregation='None' datatype='integer' name='[Age (bin)]' role='dimension' type='quantitative'>
+              <calculation class='bin' decimals='0' formula='[age]' peg='0' size='3.83' />
+            </column>
+            <column datatype='string' name='[Variation]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='%null%' value='Other' />
+              </aliases>
+            </column>
+            <column caption='Age' datatype='real' name='[age]' role='measure' type='quantitative' />
+            <column-instance column='[time_diff]' derivation='Avg' name='[avg:time_diff:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[time_diff]' derivation='Avg' name='[avg:time_diff:vtnone:qk]' pivot='key' type='quantitative' visual-totals='None' />
+            <column-instance column='[visit_id]' derivation='Count' name='[cnt:visit_id:vtnone:qk]' pivot='key' type='quantitative' visual-totals='None' />
+            <column caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+            <column-instance column='[Age (bin)]' derivation='None' name='[none:Age (bin):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Variation]' derivation='None' name='[none:Variation:nk]' pivot='key' type='nominal' />
+            <column-instance column='[process_step]' derivation='None' name='[none:process_step:nk]' pivot='key' type='nominal' />
+            <column-instance column='[years_as_client]' derivation='None' name='[none:years_as_client:ok]' pivot='key' type='ordinal' />
+            <column caption='Process Step' datatype='string' name='[process_step]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;confirm&quot;' value='Confirm' />
+                <alias key='&quot;start&quot;' value='Start' />
+                <alias key='&quot;step_1&quot;' value='Step 1' />
+                <alias key='&quot;step_2&quot;' value='Step 2' />
+                <alias key='&quot;step_3&quot;' value='Step 3' />
+              </aliases>
+            </column>
+            <column caption='Time Diff' datatype='real' name='[time_diff]' role='measure' type='quantitative' />
+            <column caption='Visit Id' datatype='string' name='[visit_id]' role='dimension' type='nominal' />
+            <column caption='Years As Client' datatype='real' name='[years_as_client]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Age (bin),Variation)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action4_86AD6033A4924882BC38DF37C1FB490C]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Age (bin):ok]' />
+              <groupfilter function='level-members' level='[Variation]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Gender)]'>
+            <groupfilter function='level-members' level='[gender]' user:ui-action-filter='[Action3_5F5BFDD3552C41519A2536F26950B577]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation,Gender)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2_597A0C71BF814727AE06D8FE49E5619A]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Variation]' />
+              <groupfilter function='level-members' level='[gender]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation,Years As Client)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action7_5EB21EAECAFA4B39974771D0AF65D234]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Variation]' />
+              <groupfilter function='level-members' level='[none:years_as_client:ok]' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:process_step:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;start&quot;</bucket>
+              <bucket>&quot;step_1&quot;</bucket>
+              <bucket>&quot;step_2&quot;</bucket>
+              <bucket>&quot;step_3&quot;</bucket>
+              <bucket>&quot;confirm&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation,Years As Client)]</column>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Age (bin),Variation)]</column>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation,Gender)]</column>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Gender)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='width' field='[federated.1r8m7gq05p65ao142q4z00t6859d].[avg:time_diff:vtnone:qk]' value='60' />
+            <format attr='title' class='0' field='[federated.1r8m7gq05p65ao142q4z00t6859d].[avg:time_diff:vtnone:qk]' scope='rows' value='' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:process_step:nk]' value='87' />
+            <format attr='border-width' value='0' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-width' data-class='total' value='0' />
+            <format attr='border-style' data-class='total' value='none' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='line-pattern-only' scope='rows' value='solid' />
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='stroke-size' scope='cols' value='1' />
+            <format attr='line-visibility' scope='cols' value='on' />
+            <format attr='line-pattern-only' scope='cols' value='solid' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:process_step:nk]' />
+              <text column='[federated.1r8m7gq05p65ao142q4z00t6859d].[avg:time_diff:qk]' />
+              <lod column='[federated.1r8m7gq05p65ao142q4z00t6859d].[cnt:visit_id:vtnone:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows onTop='true'>[federated.1r8m7gq05p65ao142q4z00t6859d].[avg:time_diff:vtnone:qk]</rows>
+        <cols>([federated.1r8m7gq05p65ao142q4z00t6859d].[none:Variation:nk] / [federated.1r8m7gq05p65ao142q4z00t6859d].[none:process_step:nk])</cols>
+      </table>
+      <simple-id uuid='{23F60AFA-A58A-49FB-B98E-F5E6AEC37FA3}' />
+    </worksheet>
+    <worksheet name='Total Balance/Group'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_final_demo_cleaned+' name='federated.1r8m7gq05p65ao142q4z00t6859d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1r8m7gq05p65ao142q4z00t6859d'>
+            <column aggregation='None' datatype='integer' name='[Age (bin)]' role='dimension' type='quantitative'>
+              <calculation class='bin' decimals='0' formula='[age]' peg='0' size='3.83' />
+            </column>
+            <column datatype='string' name='[Variation]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='%null%' value='Other' />
+              </aliases>
+            </column>
+            <column caption='Age' datatype='real' name='[age]' role='measure' type='quantitative' />
+            <column-instance column='[total_balance]' derivation='Avg' name='[avg:total_balance:qk]' pivot='key' type='quantitative' />
+            <column caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+            <column-instance column='[Age (bin)]' derivation='None' name='[none:Age (bin):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Variation]' derivation='None' name='[none:Variation:nk]' pivot='key' type='nominal' />
+            <column-instance column='[total_balance]' derivation='Sum' name='[sum:total_balance:qk]' pivot='key' type='quantitative' />
+            <column caption='Total Balance' datatype='real' name='[total_balance]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Age (bin))]'>
+            <groupfilter function='level-members' level='[none:Age (bin):ok]' user:ui-action-filter='[Action13_8FC322B4D7064F5EA7FF3568B03E3D41]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Gender)]'>
+            <groupfilter function='level-members' level='[gender]' user:ui-action-filter='[Action13_F0CABDA4044642AE9293966219F08737]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation,Gender)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action12_65916F3767224B38A045DBA744B0BE35]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Variation]' />
+              <groupfilter function='level-members' level='[gender]' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Variation,Gender)]</column>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Age (bin))]</column>
+            <column>[federated.1r8m7gq05p65ao142q4z00t6859d].[Action (Gender)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <size column='[federated.1r8m7gq05p65ao142q4z00t6859d].[sum:total_balance:qk]' />
+              <text column='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:Variation:nk]' />
+              <text column='[federated.1r8m7gq05p65ao142q4z00t6859d].[avg:total_balance:qk]' />
+              <text column='[federated.1r8m7gq05p65ao142q4z00t6859d].[sum:total_balance:qk]' />
+              <color column='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:Variation:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{B376CC5F-D806-4BB8-8866-0F2DD3EE2433}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Age/Gender'>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98416' id='27' param='horz' type-v2='layout-flow' w='99166' x='417' y='792'>
+            <zone h='98416' id='5' type-v2='layout-basic' w='99166' x='417' y='792'>
+              <zone h='49208' id='3' name='Gender of all clients' w='49582' x='417' y='792'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49208' id='28' name='Age of all clients' w='99166' x='417' y='50000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone forceUpdate='true' h='49208' id='45' type-v2='text' w='49584' x='49999' y='792'>
+                <formatted-text>
+                  <run bold='true' fontalignment='1' fontsize='20'>The distribution of Age and Gender of all 70.595 clients.</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='65' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97674' id='64' param='vert' type-v2='layout-flow' w='98770' x='615' y='1163'>
+                <zone fixed-size='280' h='48837' id='3' is-fixed='true' name='Gender of all clients' w='49385' x='615' y='1163'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='48837' id='45' type-v2='text' w='49385' x='50000' y='1163'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontsize='20'>The distribution of Age and Gender of all 70.595 clients.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='48837' id='28' is-fixed='true' name='Age of all clients' w='98770' x='615' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{DF0D7F21-40D4-48C4-8F94-F1359A487D23}' />
+    </dashboard>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Age/Gender Control/Test'>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98416' id='35' param='horz' type-v2='layout-flow' w='99166' x='417' y='792'>
+            <zone h='98416' id='27' type-v2='layout-basic' w='99166' x='417' y='792' />
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='57703' id='14' name='Gender of Control/Test' w='103075' x='231' y='-1163' />
+        <zone h='54797' id='5' name='Age of Control/Test' w='99923' x='77' y='45203' />
+        <zone h='11047' id='50' type-v2='text' w='33282' x='33590' y='3343'>
+          <formatted-text>
+            <run fontalignment='1' fontsize='20'>50.500 Clients participated in the test A/B</run>
+          </formatted-text>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='56' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97674' id='55' param='vert' type-v2='layout-flow' w='98770' x='615' y='1163'>
+                <zone fixed-size='280' h='57703' id='14' is-fixed='true' name='Gender of Control/Test' w='103075' x='231' y='-1163'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='11047' id='50' type-v2='text' w='33282' x='33590' y='3343'>
+                  <formatted-text>
+                    <run fontalignment='1' fontsize='20'>50.500 Clients participated in the test A/B</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='54797' id='5' is-fixed='true' name='Age of Control/Test' w='99923' x='77' y='45203'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{203EBABD-CC17-491C-B862-84954509C259}' />
+    </dashboard>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Balance/Gender/Age'>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='13' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='97674' id='24' param='horz' type-v2='layout-flow' w='98770' x='615' y='1163'>
+            <zone h='97674' id='22' type-v2='layout-basic' w='98770' x='615' y='1163'>
+              <zone h='97674' id='20' param='horz' type-v2='layout-flow' w='98770' x='615' y='1163'>
+                <zone h='97674' id='15' type-v2='layout-basic' w='98770' x='615' y='1163' />
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='49782' id='10' name='Age of all clients' w='99538' x='308' y='48911' />
+        <zone h='54360' id='21' name='Gender of all clients' w='53728' x='46195' y='581' />
+        <zone h='47460' id='18' name='Total Balance/Group' w='52462' x='308' y='581' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='900' minheight='900' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='40' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97674' id='39' param='vert' type-v2='layout-flow' w='98770' x='615' y='1163'>
+                <zone fixed-size='280' h='47460' id='18' is-fixed='true' name='Total Balance/Group' w='52462' x='308' y='581'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='54360' id='21' is-fixed='true' name='Gender of all clients' w='53728' x='46195' y='581'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49782' id='10' is-fixed='true' name='Age of all clients' w='99538' x='308' y='48911'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{EADF84C3-652B-4FBF-89E4-966C64490272}' />
+    </dashboard>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Error/Completion/Age'>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98416' id='26' param='horz' type-v2='layout-flow' w='99166' x='417' y='792'>
+            <zone h='98416' id='18' param='vert' type-v2='layout-flow' w='99166' x='417' y='792'>
+              <zone h='98416' id='12' type-v2='layout-basic' w='99166' x='417' y='792'>
+                <zone h='98416' id='7' param='horz' type-v2='layout-flow' w='99166' x='417' y='792'>
+                  <zone h='98416' id='5' type-v2='layout-basic' w='99166' x='417' y='792'>
+                    <zone h='49216' id='3' name='Error/Step' w='99166' x='417' y='49992'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='49200' id='9' name='Age of all clients' w='49580' x='417' y='792'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='49200' id='24' name='Completion Rate / Visit id' w='49586' x='49997' y='792'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                  </zone>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='900' minheight='900' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='44' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97674' id='43' param='vert' type-v2='layout-flow' w='98770' x='615' y='1163'>
+                <zone fixed-size='280' h='48830' id='9' is-fixed='true' name='Age of all clients' w='49383' x='615' y='1163'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='48830' id='24' is-fixed='true' name='Completion Rate / Visit id' w='49387' x='49998' y='1163'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='48844' id='3' is-fixed='true' name='Error/Step' w='98770' x='615' y='49993'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{9EE271E9-0277-4C0F-93E1-FAB33496B03B}' />
+    </dashboard>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Gender/Time'>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98416' id='8' param='horz' type-v2='layout-flow' w='99166' x='417' y='792'>
+            <zone h='98416' id='6' type-v2='layout-basic' w='99166' x='417' y='792'>
+              <zone h='54191' id='5' name='Time' w='99166' x='417' y='45017'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone forceUpdate='true' h='44225' id='11' type-v2='text' w='34609' x='64974' y='792'>
+                <formatted-text>
+                  <run fontalignment='1' fontsize='20'>Averave time spent on each step. </run>
+                  <run>Æ&#10;</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='44225' id='18' name='Gender of Control/Test' w='64557' x='417' y='792'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='30' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97674' id='29' param='vert' type-v2='layout-flow' w='98770' x='615' y='1163'>
+                <zone fixed-size='280' h='43892' id='18' is-fixed='true' name='Gender of Control/Test' w='64300' x='615' y='1163'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='43892' id='11' type-v2='text' w='34470' x='64915' y='1163'>
+                  <formatted-text>
+                    <run fontalignment='1' fontsize='20'>Averave time spent on each step. </run>
+                    <run>Æ&#10;</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='53782' id='5' is-fixed='true' name='Time' w='98770' x='615' y='45055'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{75526E2E-7973-4214-AE22-D7579EBBCB64}' />
+    </dashboard>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='H1 Completion rate'>
+      <style />
+      <size maxheight='1160' maxwidth='1250' minheight='560' minwidth='420' sizing-mode='range' />
+      <zones>
+        <zone h='24238' id='3' type-v2='text' w='99846' x='154' y='0'>
+          <formatted-text>
+            <run fontcolor='#3b3b3b' fontname='Menlo' fontsize='20'>H1 = Reject null hypothesis: There is a significant difference in completion rates between Control and Test groups.</run>
+          </formatted-text>
+        </zone>
+        <zone h='33237' id='7' name='Completion Rate / Visit id' w='34462' x='65231' y='29318' />
+        <zone h='33237' id='16' name='Completion Rate Client_id' w='33280' x='-80' y='29318' />
+        <zone h='33237' id='17' name='Completion Rate Visitor_id' w='33231' x='32000' y='29318' />
+        <zone forceUpdate='true' h='24528' id='30' type-v2='text' w='33360' x='34720' y='64586'>
+          <formatted-text>
+            <run bold='true' fontsize='22'>Visit id: </run>
+            <run fontsize='22'>A unique ID for each web visit/session.</run>
+            <run>Æ&#10;&#10;</run>
+            <run bold='true' fontsize='20'>Visitor id:</run>
+            <run fontsize='20'> A unique ID for each client-device combination </run>
+          </formatted-text>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='950' minheight='950' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='29' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97678' id='28' param='vert' type-v2='layout-flow' w='98720' x='640' y='1161'>
+                <zone h='24238' id='3' type-v2='text' w='99846' x='154' y='0'>
+                  <formatted-text>
+                    <run fontcolor='#3b3b3b' fontname='Menlo' fontsize='20'>H1 = Reject null hypothesis: There is a significant difference in completion rates between Control and Test groups.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='33237' id='16' is-fixed='true' name='Completion Rate Client_id' w='33280' x='-80' y='29318'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='33237' id='17' is-fixed='true' name='Completion Rate Visitor_id' w='33231' x='32000' y='29318'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='33237' id='7' is-fixed='true' name='Completion Rate / Visit id' w='34462' x='65231' y='29318'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{3C9D64A9-53B5-4496-B34D-A76213A5DA36}' />
+    </dashboard>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Tenure / Age'>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98416' id='7' param='horz' type-v2='layout-flow' w='99166' x='417' y='792'>
+            <zone h='98416' id='5' type-v2='layout-basic' w='99166' x='417' y='792'>
+              <zone h='49208' id='3' name='Tenure comparison' w='99166' x='417' y='50000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49208' id='9' name='Age of all clients' w='99166' x='417' y='792'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone fixed-size='78' h='11337' id='8' is-fixed='true' name='Tenure comparison' pane-specification-id='3' param='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:Variation:nk]' type-v2='color' w='10630' x='48064' y='51453' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='33' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97674' id='32' param='vert' type-v2='layout-flow' w='98770' x='615' y='1163'>
+                <zone fixed-size='280' h='48837' id='9' is-fixed='true' name='Age of all clients' w='98770' x='615' y='1163'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='48837' id='3' is-fixed='true' name='Tenure comparison' w='98770' x='615' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='78' h='11337' id='8' name='Tenure comparison' pane-specification-id='3' param='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:Variation:nk]' type-v2='color' w='10630' x='48064' y='51453'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{1E4DBFC6-A656-4181-B190-4F3629D01A62}' />
+    </dashboard>
+  </dashboards>
+  <windows pres-mode='true' source-height='30'>
+    <window class='worksheet' name='Gender of all clients'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1r8m7gq05p65ao142q4z00t6859d].[pcto:cnt:client_id:qk]' type='size' />
+            <card pane-specification-id='0' param='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:gender:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{2EDF9446-E72E-45A7-A5D3-29A6580FEF52}' />
+    </window>
+    <window class='worksheet' name='Gender of Control/Test'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{9E935646-902A-44DB-ABE7-BCBE60E31A9C}' />
+    </window>
+    <window class='worksheet' name='Sheet 13'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{BD192F3B-3928-41B4-B7AA-41183E98A467}' />
+    </window>
+    <window class='worksheet' name='Age of all clients'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{CA5DB25A-5768-4992-9215-6DED5DDDEEBB}' />
+    </window>
+    <window class='worksheet' name='Age of Control/Test'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{4896289C-62C4-4990-8B3B-E8B7F50E0EC1}' />
+    </window>
+    <window class='worksheet' name='Tenure comparison'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='bottom'>
+          <strip size='94'>
+            <card type='caption' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='3' param='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:Variation:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{3C19A9C3-FD84-4AE1-859E-0C5BA7EEFAEC}' />
+    </window>
+    <window class='worksheet' name='Completion Rate Client_id'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:Variation:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{44BEE129-AB22-41E7-AB32-B1C5785684BB}' />
+    </window>
+    <window class='worksheet' name='Completion Rate / Visit id'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:Variation:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{19E38E7C-2C96-45DB-A9D9-5229666B1C17}' />
+    </window>
+    <window class='worksheet' name='Completion Rate Visitor_id'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:Variation:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{5ADD6064-88DD-4EAF-AE4B-61AB1FE065DE}' />
+    </window>
+    <window class='worksheet' name='Time'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:process_step:nk]' type='color' />
+            <card param='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:process_step:nk]' type='highlighter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{2CB23FCE-F4A3-4E4F-99E4-0B1172DCE365}' />
+    </window>
+    <window class='worksheet' name='Error/Step'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='2' param='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:process_step:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F0C0A6AB-B6FE-433F-888D-2C197E8C9C70}' />
+    </window>
+    <window class='worksheet' name='Total Balance/Group'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1r8m7gq05p65ao142q4z00t6859d].[none:Variation:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{8317A355-6428-495E-8377-39242DEBF7B5}' />
+    </window>
+    <window class='dashboard' name='Age/Gender'>
+      <viewpoints>
+        <viewpoint name='Age of all clients'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Gender of all clients'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='3' />
+      <simple-id uuid='{44F14BF3-17AE-492A-B204-EF72FD8C4451}' />
+    </window>
+    <window class='dashboard' name='Age/Gender Control/Test'>
+      <viewpoints>
+        <viewpoint name='Age of Control/Test'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Gender of Control/Test'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='14' />
+      <simple-id uuid='{537BAAC2-D385-4D23-BFF0-77AE92154F0F}' />
+    </window>
+    <window class='dashboard' name='Tenure / Age'>
+      <viewpoints>
+        <viewpoint name='Age of all clients'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Tenure comparison'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='3' />
+      <simple-id uuid='{875C951D-63F1-4C0B-8AF2-673A65591F9A}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Gender/Time'>
+      <viewpoints>
+        <viewpoint name='Gender of Control/Test'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Time'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='18' />
+      <simple-id uuid='{853F328B-7B44-4FA7-A563-6554B9FC34B0}' />
+    </window>
+    <window class='dashboard' name='Error/Completion/Age'>
+      <viewpoints>
+        <viewpoint name='Age of all clients'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Completion Rate / Visit id'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Error/Step'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{BC7540FF-912A-47BE-B21E-CB71EA0AD825}' />
+    </window>
+    <window class='dashboard' name='Balance/Gender/Age'>
+      <viewpoints>
+        <viewpoint name='Age of all clients'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Gender of all clients'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Total Balance/Group'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='10' />
+      <simple-id uuid='{AF3AAB87-249A-4C01-A414-C32FBFB81E41}' />
+    </window>
+    <window class='dashboard' name='H1 Completion rate'>
+      <viewpoints>
+        <viewpoint name='Completion Rate / Visit id'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Completion Rate Client_id'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Completion Rate Visitor_id'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{E49D5B02-371F-493D-B3E4-0F41DFEDCA6B}' />
+    </window>
+  </windows>
+</workbook>
